@@ -3,6 +3,7 @@ SRC_DIR=src
 
 GXX=g++
 CFLAGS=
+LNK_FLAGS=
 
 OBJ_DIR=$(BUILD_DIR)/obj
 
@@ -23,7 +24,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp | $(OBJ_DIR)
 $(BUILD_DIR)/out.exe: $(OBJECTS) | $(BUILD_DIR)
 	@rm -f $(BUILD_DIR)/out.exe
 	@echo Linking exec...
-	@$(GXX) $(CFLAGS) $(OBJECTS) -o $(BUILD_DIR)/out.exe
+	@$(GXX) $(LNK_FLAGS) $(OBJECTS) -o $(BUILD_DIR)/out.exe
 
 clean:
 	rm -rf $(BUILD_DIR)/*
